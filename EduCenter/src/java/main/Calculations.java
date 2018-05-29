@@ -90,7 +90,7 @@ class Calculations {
     }
 
 
-    public static void goodStudent(List<Student> students) {
+    public static void checkGoodStudent(List<Student> students) {
         System.out.print("\n\n Есть вероятность, что не будет отчислен: \n\n");
         for (Student student : students) {
             if (!verificationOfProgress(student)) {

@@ -35,7 +35,7 @@ public class Main {
 
         Calculations.sortByAverageMark(students);
         Calculations.sortByDaysTheEnd(students);
-        Calculations.goodStudent(students);
+        Calculations.checkGoodStudent(students);
     }
 }
 
