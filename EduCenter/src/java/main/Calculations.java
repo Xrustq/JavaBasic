@@ -63,8 +63,7 @@ class Calculations {
             return 0;
         });
 
-        System.out.printf("\n\n Список студентов отсортированный по среднему баллу:\n");
-        System.out.printf(" -------------------------------------------------");
+        System.out.print("\n\n Список студентов отсортированный по среднему баллу:\n");
         for(Student student : sortedList ){
             System.out.printf("\n %-20s средний балл %.1f.", student.getName(), averageMarks(student));
         }
@@ -83,8 +82,7 @@ class Calculations {
             return 0;
         });
 
-        System.out.printf("\n\n Список студентов отсортированный по времени до окончания обучения:\n");
-        System.out.printf(" -------------------------------------------------");
+        System.out.print("\n\n Список студентов отсортированный по времени до окончания обучения:\n");
         for(Student student : sortedList ){
             System.out.printf("\n %-20s до конца обучения осталось %s часов.", student.getName(), amountOfDaysTheEnd(student) * 8);
         }
