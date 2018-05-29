@@ -41,7 +41,7 @@ class Calculations {
     }
 
     //Расчет, имеет ли смысл студенту продолжать обучение
-    public boolean verificationOfProgress(Student student) {
+    public static boolean verificationOfProgress(Student student) {
         double allMarks = 0;
         for (int mark : student.getMarks()) {
             allMarks += mark;
@@ -50,7 +50,7 @@ class Calculations {
     }
 
     //Сортировка по среднему баллу
-    public static void sortByAverageMark(List<Student> students){
+    public static void sortByAverageMark(List<Student> students) {
         List<Student> sortedList = new ArrayList<>(students);
 
         sortedList.sort((o1, o2) -> {
@@ -64,12 +64,13 @@ class Calculations {
         });
 
         System.out.print("\n\n Список студентов отсортированный по среднему баллу:\n");
-        for(Student student : sortedList ){
+        for (Student student : sortedList) {
             System.out.printf("\n %-20s средний балл %.1f.", student.getName(), averageMarks(student));
         }
     }
 
-    public static void sortByDaysTheEnd(List<Student> students){
+
+    public static void sortByDaysTheEnd(List<Student> students) {
         List<Student> sortedList = new ArrayList<>(students);
 
         sortedList.sort((o1, o2) -> {
@@ -83,8 +84,18 @@ class Calculations {
         });
 
         System.out.print("\n\n Список студентов отсортированный по времени до окончания обучения:\n");
-        for(Student student : sortedList ){
+        for (Student student : sortedList) {
             System.out.printf("\n %-20s до конца обучения осталось %s часов.", student.getName(), amountOfDaysTheEnd(student) * 8);
+        }
+    }
+
+
+    public static void goodStudent(List<Student> students) {
+        System.out.print("\n\n Есть вероятность, что не будет отчислен: \n\n");
+        for (Student student : students) {
+            if (!verificationOfProgress(student)) {
+                System.out.printf(" %s" , student.getName());
+            }
         }
     }
 }
