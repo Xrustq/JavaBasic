@@ -1,14 +1,16 @@
-package main;
+package main.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Arrays;
+
 
 public class Student {
     private String name;
     private Curriculum curriculum;
-    private Date startDate;
-    private int [] marks;
+    private LocalDate startDate;
+    private int[] marks;
 
-    public Student(String name, Curriculum curriculum, Date startDate, int[] marks) {
+    public Student(String name, Curriculum curriculum, LocalDate startDate, int[] marks) {
         this.name = name;
         this.curriculum = curriculum;
         this.startDate = startDate;
@@ -31,11 +33,11 @@ public class Student {
         this.curriculum = curriculum;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
@@ -47,13 +49,14 @@ public class Student {
         this.marks = marks;
     }
 
+
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", curriculum=" + curriculum +
                 ", startDate='" + startDate + '\'' +
-                ", marks=" + marks +
+                ", marks=" + Arrays.toString(marks) +
                 '}';
     }
 }

@@ -1,46 +1,40 @@
 package main;
 
+
+import main.entity.Curriculum;
+import main.entity.Student;
+
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import static main.Calculations.EndDate;
-import static main.Calculations.averageMarks;
-import static main.Calculations.getCourseDuration;
 
 public class Main {
     public static void main(String[] args) {
-
+        Calculations calculations = new Calculations();
         List<Student> students = new ArrayList<>();
-        Student student;
+        GenCourses genCourses = new GenCourses();
+        Student student1;
+        Student student2;
 
-        Curriculum curriculum;
+        Curriculum curriculum1 = genCourses.genCurriculum();
+        Curriculum curriculum2 = genCourses.genCurriculum();
 
-        List<Course> courses = new ArrayList<>();
+        student1 = new Student("Nikolay Nikolaev", curriculum1, LocalDate.of(2018, Month.MAY, 21), genCourses.rndMarks(curriculum1));
+        student2 = new Student("Igor Igorev", curriculum2, LocalDate.of(2018, Month.MAY, 14), genCourses.rndMarks(curriculum2));
 
-        int[] marks = {4, 5, 5};
+        students.add(student1);
+        students.add(student2);
 
-        Date date = new Date();
+        for (Student student : students) {
+            System.out.printf("%s - До окончания обучения по программе %s осталось %d ч. Средний балл %.1f. %s \n",
+                    student.getName(), student.getCurriculum().getCurriculumName(), Calculations.amountOfDaysTheEnd(student) * 8, Calculations.averageMarks(student),
+                    (calculations.verificationOfProgress(student)) ? "Отчислить." : "Может продолжать обучение.");
+        }
 
-        curriculum = new Curriculum("J2EE Developer", courses);
-
-        courses.add(new Course("Java Servlets", 8));
-        courses.add(new Course("Spring Framework", 16));
-
-        student = new Student("Ivan", curriculum, date, marks);
-
-        students.add(student);
-
-        System.out.println(students);
-
-        //Getting the average of one student
-        System.out.printf("Средний балл " + student.getName() + " " + "%.1f" + " балла." + "\n", averageMarks(student));
-
-        System.out.println(EndDate(student));
-
-        System.out.printf(String.valueOf(getCourseDuration(student)));
-
+        Calculations.sortByAverageMark(students);
+        Calculations.sortByDaysTheEnd(students);
     }
 }
 
