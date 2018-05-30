@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class GenCourses {
+public class Generators {
 
     private List<Course> courseList = new ArrayList<>();
     private List<Curriculum> curriculumList = new ArrayList<>();
@@ -24,6 +24,10 @@ public class GenCourses {
         courseList.add(new Course("Библиотека JFC/Swing", 16));
 
     }
+
+    /**
+     *Генератор учебного плана
+     */
 
     public Curriculum genCurriculum() {
 
@@ -47,12 +51,15 @@ public class GenCourses {
         return courceList;
     }
 
+    /**
+     *Генератор оценок
+     */
+
     public int[] rndMarks(Curriculum curriculum) {
         int[] array = new int[curriculum.getCourses().size()];
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(5) + 1;
         }
-        System.out.println();
         return array;
     }
 }

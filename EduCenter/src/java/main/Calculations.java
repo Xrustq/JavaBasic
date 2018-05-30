@@ -8,6 +8,10 @@ import java.util.List;
 
 class Calculations {
 
+    /**
+     * Метод для вычесления среднего балла.
+     */
+
     public static double averageMarks(Student student) {
         double sum = 0;
         int length;
@@ -22,7 +26,10 @@ class Calculations {
         return sum / length;
     }
 
-    //Продолжительность курса в днях
+    /**
+     * Метод для вычесления продолжительности курса в днях.
+     */
+
     public static int getCourseDuration(Student student) {
         double duration = 0;
         List<Course> courses = student.getCurriculum().getCourses();
@@ -35,12 +42,19 @@ class Calculations {
         return (int) Math.ceil(days);
     }
 
-    //Сколько осталось студенту до завершения курса
+    /**
+     * Метод для вычесления количества дней оставшихся студенту
+     * до завершения курса.
+     */
+
     public static int amountOfDaysTheEnd(Student student) {
         return (getCourseDuration(student) - student.getMarks().length);
     }
 
-    //Расчет, имеет ли смысл студенту продолжать обучение
+    /**
+     * Метод расчитывающий имеет ли смысл студенту проолдолжать обучение.
+     */
+
     public static boolean verificationOfProgress(Student student) {
         double allMarks = 0;
         for (int mark : student.getMarks()) {
@@ -49,7 +63,10 @@ class Calculations {
         return ((allMarks + amountOfDaysTheEnd(student) * 5) / getCourseDuration(student)) < 4.5;
     }
 
-    //Сортировка по среднему баллу
+    /**
+     * Метод сортирующий студентов по среднему баллу.
+     */
+
     public static void sortByAverageMark(List<Student> students) {
         List<Student> sortedList = new ArrayList<>(students);
 
@@ -69,6 +86,9 @@ class Calculations {
         }
     }
 
+    /**
+     * Метод сортирующий студентов по дням оставшимся до окончяния курса.
+     */
 
     public static void sortByDaysTheEnd(List<Student> students) {
         List<Student> sortedList = new ArrayList<>(students);
@@ -89,12 +109,15 @@ class Calculations {
         }
     }
 
+    /**
+     * Метод выводящий студентов которым имеет смысл продолжать обучение.
+     */
 
     public static void checkGoodStudent(List<Student> students) {
         System.out.print("\n\n Есть вероятность, что не будет отчислен: \n\n");
         for (Student student : students) {
             if (!verificationOfProgress(student)) {
-                System.out.printf(" %s" , student.getName());
+                System.out.printf(" %s\n" , student.getName());
             }
         }
     }
