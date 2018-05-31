@@ -5,7 +5,7 @@ import java.util.*;
 public class ConvertInfixToRPN {
 
     /**
-     * Метод для переведения выражения из инфиксного в ОПН.
+     * Метод для перевода выражения из инфиксного в ОПН.
      */
 
    public static String[] convertInfixToRPN(String expression) {
