@@ -4,6 +4,10 @@ import java.util.*;
 
 public class ConvertInfixToRPN {
 
+    /**
+     * Метод для переведения выражения из инфиксного в ОПН.
+     */
+
    public static String[] convertInfixToRPN(String expression) {
 
        String[] parseToInfix = expression.trim().split("\\s+");

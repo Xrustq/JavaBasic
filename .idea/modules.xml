@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Calc/src/Calc.iml" filepath="$PROJECT_DIR$/Calc/src/Calc.iml" />
       <module fileurl="file://$PROJECT_DIR$/EduCenter/src/EduCenter.iml" filepath="$PROJECT_DIR$/EduCenter/src/EduCenter.iml" />
     </modules>
   </component>

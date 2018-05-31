@@ -3,6 +3,11 @@ package Calculator;
 import java.util.Stack;
 
 public class CalculatePRN {
+
+    /**
+     * Метод для расчета выражения переведенного в ОПН.
+     */
+
     public static int evalRPN(String[] exp) {
 
         Stack<Integer> stack = new Stack<>();
