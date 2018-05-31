@@ -1,4 +1,4 @@
-package main.entity;
+package EduCenter.entity;
 
 public class Course {
     private String name;

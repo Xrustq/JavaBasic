@@ -1,7 +1,7 @@
-package main;
+package EduCenter;
 
-import main.entity.Course;
-import main.entity.Student;
+import EduCenter.entity.Course;
+import EduCenter.entity.Student;
 
 import java.util.ArrayList;
 import java.util.List;

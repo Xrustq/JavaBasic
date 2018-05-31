@@ -1,4 +1,4 @@
-package main.entity;
+package EduCenter.entity;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package main;
+package EduCenter;
 
 
-import main.entity.Curriculum;
-import main.entity.Student;
+import EduCenter.entity.Curriculum;
+import EduCenter.entity.Student;
 
 import java.time.LocalDate;
 import java.time.Month;
